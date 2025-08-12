@@ -4,6 +4,7 @@ import time
 import sys
 import string
 import csv
+import banner
 
 
 def password_generator(length):
@@ -71,4 +72,5 @@ def main():
 
 
 if __name__ == "__main__":
+    banner()
     main()
