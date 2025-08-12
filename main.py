@@ -72,5 +72,5 @@ def main():
 
 
 if __name__ == "__main__":
-    show_banner("Password Generator")
+    banner.show_banner("Password Generator")
     main()
