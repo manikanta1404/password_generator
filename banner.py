@@ -7,4 +7,4 @@ def show_banner(tool_name):
     print(colored(ascii_banner, 'red', attrs=['bold']))
     print(' '*20, colored('@manikanta1404', 'green'))
 
-show_banner("Password Generator")
+
