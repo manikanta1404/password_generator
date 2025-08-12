@@ -43,3 +43,6 @@ Clone this repository:
 ```bash
 git clone https://github.com/yourusername/password_generator.git
 cd password_generator
+pip install -r requirements.txt
+python main.py
+
