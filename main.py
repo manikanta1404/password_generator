@@ -4,7 +4,6 @@ import time
 import sys
 import string
 import csv
-import banner
 
 
 def password_generator(length):
@@ -51,20 +50,22 @@ def main():
             writer = csv.DictWriter(csvfile, fieldnames=fields)
 
             # Write header only if the file is empty (first run)
-            csvfile.seek(0, 2)  
+            csvfile.seek(0, 2)
             if csvfile.tell() == 0:
                 writer.writeheader()
 
             writer.writerows(mydict)
 
-        # Simulate exit countdown
-        for c in range(5):
-            sys.stdout.write(f'\r[+] Exiting in {3 - c}')
-            sys.stdout.flush()
-            time.sleep(1)
-        sys.stdout.write('\rDone!     \n')
-        print("Your details are stored in csv file ===> ", os.getcwd() +"\\", filename)
+        print("Your details are stored in csv file ===> ", os.getcwd() + "\\", filename)
+        print("Press Ctrl+C to exit.")
 
+        # Just wait until user presses Ctrl+C
+        while True:
+            time.sleep(1)
+
+    except KeyboardInterrupt:
+        print("\n[+] Program exited by user.")
+        sys.exit(0)
     except PermissionError as e:
         print(f"Permission error: {e}. Please check your file permissions.")
     except Exception as e:
@@ -72,5 +73,5 @@ def main():
 
 
 if __name__ == "__main__":
-    banner.show_banner("Password Generator")
+    banner.show_banner("Password Generator ")
     main()
