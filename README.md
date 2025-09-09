@@ -46,3 +46,6 @@ cd password_generator
 pip install -r requirements.txt
 python main.py
 
+```
+## sample ScreenShort
+
